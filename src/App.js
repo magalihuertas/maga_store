@@ -10,8 +10,8 @@ import { ItemListContainer } from "./containers/ItemListContainer"
 
 function App() {
   const product = [
-    { id: 1, nombre: "Unik Gatito 2 kilos", marca: "Unik Gato", precio: 10 },
-    { id: 2, nombre: "Unik Gatito 7,5 kilos", marca:"Unik Perro", precio: 20 }
+    { id: 1, nombre: "Unik Gatito 2 kilos", marca: "Unik Gato", precio: 10, stock:10 },
+    { id: 2, nombre: "Unik Gatito 7,5 kilos", marca:"Unik Perro", precio: 20, stock:10 }
   ];
 
   return (
