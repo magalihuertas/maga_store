@@ -5,9 +5,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { NavBar } from "./components/NavBar";
 import { Carrousel } from "./components/Carrousel"
 import { Footer } from "./components/Footer";
-import { Cards } from "./components/Cards";
 
-/* import { ItemListContainer } from "./containers/ItemListContainer" */
+import { ItemListContainer } from "./containers/ItemListContainer"
 
 function App() {
   const product = [
@@ -20,15 +19,13 @@ function App() {
       <header className="App-header">
         <NavBar />
         <Carrousel/>
-        <Cards productData ={product[0]} greeting={"Bienvenidos a la tienda"}/>
-        <Cards productData ={product[1]}/>
+        <ItemListContainer productlist={product}/>
         <br/>
         <br/>
         <br/>
+        
         <Footer/>
-        
-        {/* <ItemListContainer greeting={"Bienvenidos a la tienda"}/> */}
-        
+              
       </header>
     </div>
   );
