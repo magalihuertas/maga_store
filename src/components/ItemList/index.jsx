@@ -5,8 +5,7 @@ export const ItemList = ({product}) => {
 
     return (
         <div>
-            <p>Profe Javi CRACK</p>
-        
+                   
         {product.map((element) =>
         <Item productData ={element}/>
         
