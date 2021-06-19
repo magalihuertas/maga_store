@@ -2,7 +2,7 @@ import React from 'react'
 import './estilos.css';
 import { ItemCount } from '../ItemCount';
 
-export const Cards = ({productData, greeting,onAdd,onSubstract}) => {
+export const Item = ({productData,onAdd,onSubstract}) => {
     function agregarAlCarrito() {
 
     }
@@ -12,7 +12,6 @@ export const Cards = ({productData, greeting,onAdd,onSubstract}) => {
             <p>{productData.marca}</p>
             <p>{productData.precio}</p>
             <ItemCount stock={10} initial={1} onAdd={onAdd} onSubstract={onSubstract}/>
-            <p>{greeting}</p>
             <button onClick={agregarAlCarrito}>Agregar al Carrito</button>
         </div>
     )

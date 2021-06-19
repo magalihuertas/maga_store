@@ -1,12 +1,22 @@
 
 import React from 'react'
-import { Cards } from "../../components/Cards";
+import { ItemList } from '../../components/ItemList';
 
-export const ItemListContainer = ({productlist}) => {
+
+export const ItemListContainer = ({greeting}) => {
+
+    const product = [
+        { id: 1, nombre: "Unik Gatito 2 kilos", marca: "Unik Gato", precio: 10, stock:10 },
+        { id: 2, nombre: "Unik Gatito 7,5 kilos", marca:"Unik Perro", precio: 20, stock:10 },
+        { id: 3, nombre: "Unik Perro", marca:"Unik Perro", precio: 20, stock:10 }
+      ];
+
     return (
         <div>
-        <Cards productData ={productlist[0]} greeting={"Bienvenidos a la tienda"}/>
-        <Cards productData ={productlist[1]}/>
+            <p>{greeting}</p>
+            <ItemList product={product}/>
+
+        
         </div>
     )
 }
