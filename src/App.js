@@ -19,13 +19,11 @@ function App() {
       <header className="App-header">
         <NavBar />
         <Carrousel/>
-        <ItemListContainer productlist={product}/>
+        <ItemListContainer productlist={product} greeting="Bienvenidos a la tienda"/>
         <br/>
         <br/>
         <br/>
-        
         <Footer/>
-              
       </header>
     </div>
   );
