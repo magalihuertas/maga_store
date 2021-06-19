@@ -9,10 +9,10 @@ export const Item = ({productData,onAdd,onSubstract}) => {
     return (
         <div className="card">
             <h1>{productData.nombre}</h1>
-            <img src={productData.imagen}/>
+            <img src={productData.imagen} alt="imagen"/>
             <p>{productData.precio}</p>
             
-            <ItemCount stock={10} initial={1} onAdd={onAdd} onSubstract={onSubstract}/>
+            <ItemCount stock={productData.stock} initial={1} onAdd={onAdd} onSubstract={onSubstract}/>
             <button onClick={agregarAlCarrito}>Agregar al Carrito</button>
         </div>
     )
