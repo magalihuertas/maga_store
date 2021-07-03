@@ -1,9 +1,6 @@
-
-export async function getProductsMeLi(criterio) {
-    const response = await fetch(
-      `https://api.mercadolibre.com/sites/MLA/search?q=${criterio}`
-    );
+export async function getProductsJSON() {
+    const response = await fetch('/assets/productos.json');
     const data = await response.json();
-    return data.results;
+    return data;
   }
   

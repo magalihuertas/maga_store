@@ -1,46 +1,28 @@
-
 import React from 'react'
 import { ItemList } from '../../components/ItemList';
-import { getProductsMeLi } from '../../utils/utils';
-/* import { getProductsMeLi } from "../utils/const.jsx"; */
+import { getProductsJSON } from '../../utils/utils';
 import { useEffect, useState } from "react";
+import {useParams} from 'react-router-dom';
 
-
-export const ItemListContainer = ({greeting}) => {
-
+export const ItemListContainer = () => {
+    const { id } = useParams()
+    console.log(id)
     const [productos, setProductos] = useState([]);
-/*    const product = [
-        { id: 1, nombre: "Unik Gatito 2 kilos", marca: "Unik Gato", precio: 10, stock:10 },
-        { id: 2, nombre: "Unik Gatito 7,5 kilos", marca:"Unik Perro", precio: 20, stock:10 },
-        { id: 3, nombre: "Unik Perro", marca:"Unik Perro", precio: 20, stock:10 }
-      ];
- */
       useEffect(() => {
-    
-        const waitForData = async () => {
-          let data = await getProductsMeLi("gato");
-          let aux = data.map((element) => {
-            return {
-              nombre: element.title,
-              imagen: element.thumbnail,
-              precio: element.price,
-              stock: element.available_quantity,
-                        };
-          });
-          setProductos(aux);
-        };
-        waitForData();
-      
-  }, []);
+          const waitForData = async () => {
+            let data = await getProductsJSON();
+            console.log(data)
+            if(id) data = data.filter(item=>item.categoria === id)
+            setProductos(data)
+          };
+        setTimeout(() => {
+          waitForData();
+        },2000)   
+  }, [id]);
       
     return (
         <div>
-            <p>{greeting}</p>
-            <ItemList product={productos}/>
-       
+          <ItemList product={productos}/>
         </div>
     )
 }
-
-
-

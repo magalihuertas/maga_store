@@ -5,10 +5,8 @@ export const ItemList = ({product}) => {
 
     return (
         <div>
-                   
         {product.map((element) =>
-        <Item productData ={element}/>
-        
+        <Item key={element.id} productData ={element}/>
         )}
         </div>
     )
