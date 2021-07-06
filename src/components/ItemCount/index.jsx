@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 
-export const ItemCount = ({stock}) => {
+export const ItemCount = ({stock,onAdd}) => {
     
     const [initial, setContador]= useState(1)
 
-    const onAdd=() => {
+    const sumar=() => {
         if(initial<stock){
             setContador(initial+1)
         }
@@ -18,8 +18,8 @@ export const ItemCount = ({stock}) => {
         <div>
             <button onClick={onSubstract}>-</button>
             <input type="text" value={initial}/>
-            <button onClick={onAdd}>+</button>
-            
+            <button onClick={sumar}>+</button>
+            <button onClick={()=> onAdd(initial)} >Agregar al Carrito</button>
         </div>
     )
 }
