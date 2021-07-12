@@ -1,20 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './estilos.css';
 import { ItemCount } from '../ItemCount';
 import { Link } from 'react-router-dom';
 
-export const Item = ({productData,onAdd,onSubstract}) => {
-    function agregarAlCarrito() {
+export const Item = ({productData}) => {
+    
+    const [itemAgregado, setItemAgregado] = useState(null);
 
+    const onAdd =(cantidad) => {
+        setItemAgregado(cantidad)
+       
     }
+
     return (
         <div className="card">
             <h1>{productData.nombre}</h1>
             <img src={productData.imagen} alt="imagen"/>
             <p>{productData.precio}</p>
-            <ItemCount stock={productData.stock} initial={1} onAdd={onAdd} onSubstract={onSubstract}/>
+            <ItemCount producto={productData} onAdd={onAdd} />
             <Link to={`/item/${productData.id}`} className="btn btn-primary" >Ver más</Link>
-            <button onClick={agregarAlCarrito}>Agregar al Carrito</button>
         </div>
     )
 }

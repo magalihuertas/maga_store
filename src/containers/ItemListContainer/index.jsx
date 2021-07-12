@@ -4,7 +4,9 @@ import { getProductsJSON } from '../../utils/utils';
 import { useEffect, useState } from "react";
 import {useParams} from 'react-router-dom';
 
+
 export const ItemListContainer = () => {
+    
     const { id } = useParams()
     console.log(id)
     const [productos, setProductos] = useState([]);

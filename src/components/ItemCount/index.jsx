@@ -1,11 +1,14 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import {CartContext} from '../../context/CartContext';
 
-export const ItemCount = ({stock,onAdd}) => {
+export const ItemCount = ({producto,onAdd}) => {
     
     const [initial, setContador]= useState(1)
 
+    const {addItem}= useContext(CartContext)
+
     const sumar=() => {
-        if(initial<stock){
+        if(initial<producto.stock){
             setContador(initial+1)
         }
     }
@@ -19,7 +22,10 @@ export const ItemCount = ({stock,onAdd}) => {
             <button onClick={onSubstract}>-</button>
             <input type="text" value={initial}/>
             <button onClick={sumar}>+</button>
-            <button onClick={()=> onAdd(initial)} >Agregar al Carrito</button>
+            <button onClick={()=> {
+                addItem(producto,initial)
+                onAdd(initial)}}
+                >Agregar al Carrito</button>
         </div>
     )
 }

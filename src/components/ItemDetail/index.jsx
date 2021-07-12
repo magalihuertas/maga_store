@@ -19,7 +19,7 @@ const onAdd =(cantidad) => {
             {itemAgregado ? 
             <div><Link to='/cart'><button>Ir al Carrito</button></Link></div>
                 : 
-            <ItemCount onAdd={onAdd} stock={productos.stock}/>}           
+            <ItemCount onAdd={onAdd} producto={productos}/>}           
         </div>
     )
 }
