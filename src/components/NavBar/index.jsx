@@ -18,7 +18,7 @@ export const NavBar = () => {
                                 <li><Link to="/category/gato" className="dropdown-item">Gato</Link></li>
                             </ul>
                         </li>
-                        <li className="nav-item"><a className="nav-link" href="/"> <CartWidget /></a></li>
+                        <li className="nav-item"><Link to="/cart" className="nav-link"> <CartWidget /></Link></li>
                         </ul>
                 </div>
             </div>

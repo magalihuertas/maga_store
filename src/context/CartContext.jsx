@@ -3,7 +3,6 @@ import { createContext, useState } from 'react';
 export const CartContext = createContext()
 
 export const CartContextComponent = ({children}) => {
-
     
     const [cart, setCart] = useState([])
     console.log(cart)
@@ -19,16 +18,23 @@ export const CartContextComponent = ({children}) => {
 
     function clear(){
         setCart([])
-      }
+    }
 
-      function removeItem(id) {
+    function removeItem(id) {
         const filteredCart = cart.filter((item) => item.id !== id);
         setCart(filteredCart);
         
       }
+      function subTotal(){
+          
+        const valor = cart.reduce((acumulador, item)=>{
+            return (acumulador += (item.precio * item.cantidad))
+          },0)
+          return valor
+        }
 
     return (
-        <CartContext.Provider value={{cart, addItem}} >
+        <CartContext.Provider value={{cart, addItem, clear, removeItem, subTotal}} >
             {children}
         </CartContext.Provider>
             )
