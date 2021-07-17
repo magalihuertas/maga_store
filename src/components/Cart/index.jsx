@@ -7,9 +7,7 @@ export const CartComponent = () => {
     const {cart, clear, removeItem, subTotal} = useContext(CartContext);
  
     return (
-        
         cart.length ? 
-        
             <div>
                 {cart.map(producto=>{
                 return (
