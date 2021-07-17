@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
+import CheckOut from '../CheckOut';
 
 export const CartComponent = () => {
     
@@ -20,7 +21,10 @@ export const CartComponent = () => {
             </div>
             )
         })}
-        <div>{subTotal()}</div>
+
+        <CheckOut/>
+
+            <div>{subTotal()}</div>
             <button onClick={clear}>Vaciar Carrito</button>
             </div>
             :
