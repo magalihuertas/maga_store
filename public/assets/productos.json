@@ -1,6 +1,6 @@
 [
         { "id": "1", "nombre": "Unik Gatito 2 kilos", "marca": "Unik Gato", "precio": 10, "stock":10, "categoria": "gato", "descripcion": "hola soy gato", "imagen": "/images/gatito_2_kg.png" },
         { "id": "2", "nombre": "Unik Gatito 7,5 kilos", "marca":"Unik Gato", "precio": 20, "stock":10,"categoria": "gato", "descripcion": "hola soy gatito", "imagen":"/images/gatito_7,5_kg.png"  },
-        { "id": "3", "nombre": "Unik Perro", "marca":"Unik Perro", "precio": 20, "stock":10, "categoria": "perro", "descripcion": "hola soy perro","imagen": "/images/perro_adulto_de_talla_mediana_y_grande_3_kg.png" },
+        { "id": "3", "nombre": "Unik Perro", "marca":"Unik Perro", "precio": 20, "stock":10, "categoria": "perro", "descripcion": "hola soy perro","imagen": "/images/perro_adulto_de_talla_mediana_y_grande_15_kg.png" },
         { "id": "4", "nombre": "Unik Perrito", "marca":"Unik Perro", "precio": 20, "stock":10, "categoria": "perro", "descripcion": "hola soy perrito","imagen": "/images/perro_adulto_de_talla_mediana_y_grande_3_kg.png"}
 ]
